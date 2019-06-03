@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <DisplayHeader />
-        <DisplayContent houses={this.state.data.houses} handleClick={this.handleClick} />
+        <DisplayContent houses={this.state.data.houses} handleClick={this.handleClick} activeTab={this.state.activeTab} />
         <div className="columns is-multiline">
           {
             this.state.data.houses && this.state.data.houses[this.state.activeTab].people.map(d => <DisplayCards {...d} />)
@@ -56,7 +56,7 @@ function DisplayContent(props) {
         {
           props.houses && props.houses.map((house, i) => {
             return (
-              <li className="is-active">
+              <li className={i === props.activeTab ? "is-active" : ""}>
                 <a>
                   <span className="icon is-small"><i className="fas fa-image"></i></span>
                   <span onClick={() => props.handleClick(i)} >{house.name}</span>
