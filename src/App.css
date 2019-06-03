@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+.margin-bottom{
+  margin-bottom: 40px;
+}
+.container-header{
+  display: grid;
+  width: 100%;
+  place-items: center;
+}
